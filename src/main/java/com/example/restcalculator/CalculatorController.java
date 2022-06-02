@@ -22,7 +22,7 @@ public class CalculatorController {
         return (int) Math.pow(a, 2);
     }
 
-    @RequestMapping("/pwr")
+    @Request Mapping("/pwr")
     public int pwr(
             @RequestParam int a,
             @RequestParam int b
