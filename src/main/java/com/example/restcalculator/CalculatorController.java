@@ -15,13 +15,6 @@ public class CalculatorController {
         return a + b;
     }
 
-    @RequestMapping("/abs")
-    public int abs(
-            @RequestParam int a
-    ) {
-        return Math.abs(a);
-    }
-
     @RequestMapping("/sqr")
     public int sqr(
             @RequestParam int a
@@ -29,11 +22,18 @@ public class CalculatorController {
         return (int) Math.pow(a, 2);
     }
 
-    @RequestMapping("/pow")
-    public int pow(
+    @RequestMapping("/pwr")
+    public int pwr(
             @RequestParam int a,
             @RequestParam int b
     ) {
         return (int) Math.pow(a, b);
+    }
+
+    @RequestMapping("/abs")
+    public int abs(
+            @RequestParam int a
+    ) {
+        return Math.abs(a);
     }
 }
