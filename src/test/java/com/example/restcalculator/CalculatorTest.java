@@ -28,7 +28,7 @@ class CalculatorTest {
         int a = 2;
         int b = -5;
 
-        int expectedResult = -2;
+        int expectedResult = -3;
 
         int result = calculator.sum(a, b);
 
