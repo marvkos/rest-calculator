@@ -7,28 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
-    Calculator calculator = new Calculator();
     @RequestMapping("/sum")
     public int sum(
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return calculator.sum(a, b);
-    }
-
-    @RequestMapping("/div")
-    public int div(
-            @RequestParam int a,
-            @RequestParam int b
-    ) {
-        return calculator.div(a, b);
+        return a + b;
     }
 
     @RequestMapping("/sqr")
     public int sqr(
             @RequestParam int a
     ) {
-        return calculator.sqr(a);
+        return (int) Math.pow(a, 2);
     }
 
     @RequestMapping("/pwr")
@@ -36,13 +27,13 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return calculator.pwr(a, b);
+        return (int) Math.pow(a, b);
     }
 
     @RequestMapping("/abs")
     public int abs(
             @RequestParam int a
     ) {
-        return calculator.abs(a);
+        return Math.abs(a);
     }
 }
