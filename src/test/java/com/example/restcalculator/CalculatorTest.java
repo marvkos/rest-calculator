@@ -14,7 +14,7 @@ class CalculatorTest {
         int a = 5;
         int b = 6;
 
-        int expected = 11;
+        int expected = 12;
 
         // Act
         int result = calculator.sum(a, b);
