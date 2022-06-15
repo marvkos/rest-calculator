@@ -1,5 +1,6 @@
 package com.example.restcalculator;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,19 +8,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
+    private Calculator calculator = new Calculator();
+
     @RequestMapping("/sum")
     public int sum(
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return a + b;
+        return calculator.sum(a, b);
+    }
+
+    @RequestMapping("/div")
+    public int div(
+            @RequestParam int a,
+            @RequestParam int b
+    ) {
+        return calculator.div(a, b);
     }
 
     @RequestMapping("/sqr")
     public int sqr(
             @RequestParam int a
     ) {
-        return (int) Math.pow(a, 2);
+        return calculator.sqr(a);
     }
 
     @RequestMapping("/pwr")
@@ -27,13 +38,13 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return (int) Math.pow(a, b);
+        return calculator.pwr(a, b);
     }
 
     @RequestMapping("/abs")
     public int abs(
             @RequestParam int a
     ) {
-        return Math.abs(a);
+        return calculator.abs(a);
     }
 }
